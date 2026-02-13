@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<company>
+    <employee>
+        <id>1</id>
+        <name>Alice</name>
+        <email>alice@test.com</email>
+        <status>Completed</status>
+    </employee>
+    <employee>
+        <id>2</id>
+        <name>Bob</name>
+        <email>bob@test.com</email>
+        <status>Pending</status>
+    </employee>
+    <employee>
+        <id>3</id>
+        <name>Charlie</name>
+        <email>charlie@test.com</email>
+        <status>Completed</status>
+    </employee>
+</company>

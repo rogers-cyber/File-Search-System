@@ -1,0 +1,4 @@
+This is a sample text file.
+Alice completed the first task.
+Bob is still working on his task.
+Charlie has finished everything.
