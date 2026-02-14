@@ -27,10 +27,49 @@ def resource_path(file_name):
     base_path = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
     return os.path.join(base_path, file_name)
 
+def show_about():
+    messagebox.showinfo(
+        f"About {APP_NAME} v{APP_VERSION}",
+
+        f"{APP_NAME} v{APP_VERSION}\n"
+        "Production Edition\n\n"
+
+        "File Search System is a high-performance desktop utility designed to "
+        "search large directory trees and inspect file contents with speed, accuracy, "
+        "and clarity.\n\n"
+
+        "Key Features\n"
+        "────────────\n"
+        "✔ Recursive Folder Search\n"
+        "✔ Content Search (TXT, CSV, XLSX, PDF, XML)\n"
+        "✔ Regex & Multi-Keyword Matching\n"
+        "✔ Real-Time Progress, Speed & ETA\n"
+        "✔ Match Preview (Line / Page / Cell / Tag)\n"
+        "✔ Folder Exclusion Rules\n"
+        "✔ File Type Filters (Glob Patterns)\n"
+        "✔ Threaded Search (Non-Blocking UI)\n"
+        "✔ One-Click Path Copy\n"
+        "✔ Double-Click to Open Files\n"
+        "✔ CSV Export of Results\n"
+        "✔ Cross-Platform Support\n\n"
+
+        "Built with Python, Tkinter & ttkbootstrap\n\n"
+
+        "© 2026 Mate Technologies\n"
+        "All rights reserved."
+    )
+    
 try:
     app.iconbitmap(resource_path("logo.ico"))
 except Exception:
     pass
+
+# 👇 ADD MENU HERE
+menubar = tk.Menu(app)
+help_menu = tk.Menu(menubar, tearoff=0)
+help_menu.add_command(label="About", command=show_about)
+menubar.add_cascade(label="Help", menu=help_menu)
+app.config(menu=menubar)
 
 stop_flag = False
 
