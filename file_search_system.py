@@ -4,7 +4,7 @@ import re
 import fnmatch
 import threading
 import time
-import pandas as pd
+import xlrd
 import PyPDF2
 import xml.etree.ElementTree as ET
 import tkinter as tk
@@ -200,22 +200,19 @@ def read_file_content_with_preview(path, query, use_regex=False):
                             break
 
         elif path.lower().endswith(".xlsx"):
-            sheets = pd.read_excel(path, sheet_name=None)
-            for sheet_name, sheet in sheets.items():
-                for r_idx, row in sheet.iterrows():
-                    for c_idx, value in row.items():
-                        if pd.notna(value):
+            wb = xlrd.open_workbook(path)
+            for sheet in wb.sheets():
+                for row_idx in range(sheet.nrows):
+                    for col_idx in range(sheet.ncols):
+                        value = sheet.cell_value(row_idx, col_idx)
+                        if value:
                             text = str(value)
                             if use_regex:
                                 if re.search(query, text, re.IGNORECASE):
-                                    found = True
-                                    preview = f"Sheet '{sheet_name}' Row {r_idx+1} Col {c_idx+1}: {text[:50]}"
-                                    return found, preview
+                                    return True, f"Sheet '{sheet.name}' Row {row_idx+1} Col {col_idx+1}: {text[:50]}"
                             else:
                                 if all(t.lower() in text.lower() for t in query.split()):
-                                    found = True
-                                    preview = f"Sheet '{sheet_name}' Row {r_idx+1} Col {c_idx+1}: {text[:50]}"
-                                    return found, preview
+                                    return True, f"Sheet '{sheet.name}' Row {row_idx+1} Col {col_idx+1}: {text[:50]}"
 
         elif path.lower().endswith(".pdf"):
             with open(path, "rb") as f:
