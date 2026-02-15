@@ -1,80 +1,166 @@
-# File Search System v1.0.1
+# File Search System v1.0.1 – Advanced File & Content Search Tool (Source Code + EXE)
 
-## Overview
-**File Search System** is a professional Python-based tool that allows you to search files and their contents across multiple formats including `.txt`, `.csv`, `.xlsx`, `.pdf`, and `.xml`. It provides an ultra-fast search with regex support, file type filters, folder exclusions, and preview of exact matches including line, cell, page, or XML tag context.
+File Search System v1.0.1 is a professional, high-performance desktop application for searching files and inspecting their contents across large directory trees.  
+It is designed for speed, accuracy, and usability, with real-time feedback and detailed match previews.
 
----
+This repository includes:
+- Full Python source code
+- Prebuilt Windows executable available under the Releases section
+- Portable desktop utility for daily and professional workflows
 
-## Features
-- Search by **File Name** or **Content**.
-- Support for **regex and multi-term searches**.
-- Filter by file types and exclude specific folders.
-- Real-time **progress, ETA, and speed metrics**.
-- Results displayed in a **treeview with clickable paths**.
-- **Preview column** shows exact line/cell/page/tag match.
-- **Export results** to CSV including preview context.
-- Double-click a result to **open the file**.
+------------------------------------------------------------
+WINDOWS DOWNLOAD (EXE)
+------------------------------------------------------------
 
----
+Download the latest Windows executable from GitHub Releases:
 
-## Supported File Types
-- **Text**: `.txt`  
-- **CSV**: `.csv`  
-- **Excel**: `.xlsx`  
-- **PDF**: `.pdf`  
-- **XML**: `.xml`  
+https://github.com/rogers-cyber/File-Search-System/releases
 
----
+- No Python required
+- Portable executable
+- Ready-to-run on Windows
 
-## Installation
+------------------------------------------------------------
+FEATURES
+------------------------------------------------------------
 
-1. Clone or download the project folder.
-2. Make sure you have **Python 3.9+** installed.
-3. Install dependencies:
-```bash
+- Recursive Folder Scanning — Search entire directory trees
+- File Content Search — Inspect text inside supported file formats
+- Regex Support — Advanced pattern matching
+- Multi-Keyword Matching — All terms must be present
+- File Type Filters — Glob patterns (e.g. *.txt *.pdf)
+- Folder Exclusion Rules — Skip unwanted directories
+- Real-Time Progress Tracking
+  - Progress bar
+  - Estimated time remaining (ETA)
+  - Files-per-second speed indicator
+- Threaded Background Search — UI remains responsive
+- Match Preview Column
+  - Line number (TXT / CSV)
+  - Sheet, row, and column (Excel)
+  - Page and snippet (PDF)
+  - XML tag and snippet
+- Click to Copy File Path
+- Double-Click to Open Files
+- Export Results to CSV (includes preview context)
+- Modern Dark UI — Built with Tkinter + ttkbootstrap
+- Cross-Platform Python Source (Windows EXE provided)
+
+------------------------------------------------------------
+SUPPORTED FILE TYPES
+------------------------------------------------------------
+
+- Text Files: .txt
+- CSV Files: .csv
+- Excel Files: .xlsx
+- PDF Documents: .pdf
+- XML Files: .xml
+
+------------------------------------------------------------
+REPOSITORY STRUCTURE
+------------------------------------------------------------
+
+File-Search-System/
+├── file_search_system.py
+├── dist/
+│   └── (empty or .gitkeep)
+├── logo.ico
+├── requirements.txt
+├── README.md
+└── LICENSE
+
+------------------------------------------------------------
+INSTALLATION (SOURCE CODE)
+------------------------------------------------------------
+
+1. Clone the repository:
+
+git clone https://github.com/rogers-cyber/File-Search-System.git
+cd File-Search-System
+
+2. Install dependencies:
+
 pip install -r requirements.txt
-```
 
----
+(Tkinter is included with standard Python installations.)
 
-## How to Use
+3. Run the application:
 
-1. Run the application:
-```bash
 python file_search_system.py
-```
-2. Choose a **root folder** to scan.
-3. Enter a **search term** (you can enable regex if needed).
-4. Optionally, specify **file types** and **folders to exclude**.
-5. Click **SEARCH** to start scanning.
-6. Matches appear in the **treeview** with preview context.
-7. **Click** a result to copy the path, **double-click** to open the file.
-8. Click **Export Results** to save results to a CSV file.
 
----
+------------------------------------------------------------
+HOW TO USE
+------------------------------------------------------------
 
-## Notes
-- Excel matches show **sheet, row, column**.
-- PDF matches show **page number and snippet**.
-- XML matches show **tag name and snippet**.
-- Large directories may take longer depending on the number of files.
+1. Select Root Folder
+   - Choose the main directory to scan
 
----
+2. Enter Search Term
+   - Enable Regex if required
 
-## Requirements
+3. Configure Filters
+   - File type patterns (e.g. *.txt *.pdf)
+   - Excluded folders (e.g. .git node_modules)
 
-See `requirements.txt` for Python package dependencies:
+4. Start Search
+   - Click SEARCH
+   - Monitor progress, speed, and ETA in real time
 
-```
-ttkbootstrap>=0.8.0
-pandas>=2.0.0
-PyPDF2>=3.0.0
-openpyxl>=3.1.0
-```
+5. Review Results
+   - Matches appear in the treeview
+   - Preview column shows exact match context
 
----
+6. Interact with Results
+   - Single click → copy file path
+   - Double click → open file
 
-## Developer Info
-Developed by Mate Technologies.  
-Professional, Upwork-ready Python tool for file searching and content inspection.
+7. Export
+   - Click Export Results to save a CSV report
 
+------------------------------------------------------------
+DEPENDENCIES
+------------------------------------------------------------
+
+- Python 3.9+
+- ttkbootstrap
+- PyPDF2 (or compatible PDF reader)
+- Excel reading library (implementation dependent)
+- Tkinter
+- threading / regex / standard Python libraries
+
+See requirements.txt for exact versions.
+
+------------------------------------------------------------
+NOTES
+------------------------------------------------------------
+
+- Excel matches include sheet name, row, and column
+- PDF matches include page number and text snippet
+- XML matches include tag name and snippet
+- Performance depends on file count and disk speed
+- Designed for large directory structures
+
+------------------------------------------------------------
+ABOUT
+------------------------------------------------------------
+
+File Search System is a professional desktop utility created for fast, accurate file discovery and content inspection.
+
+It is suitable for:
+- Developers
+- IT professionals
+- Analysts
+- Power users
+- Internal enterprise tooling
+
+------------------------------------------------------------
+LICENSE
+------------------------------------------------------------
+
+This project is licensed under the MIT License.
+
+You are free to use, modify, and distribute this software,
+including the source code and compiled executable,
+with attribution.
+
+See the LICENSE file for full details.
